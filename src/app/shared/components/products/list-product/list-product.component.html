@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-3">
+    <a class="btn btn-primary mb-4" routerLink="/add-product" routerLinkActive
+      >Add Product</a
+    >
+  </div>
+  <div class="form-group has-search col-md-7">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search Product name"
+      (input)="getProductData($event.target.value)"
+    />
+  </div>
+</div>
+<h2>Products List</h2>
+
+<div class="table-responsive-md">
+  <table class="table">
+    <caption>
+      List of Products
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!isLoading">
+      <tr *ngFor="let item of productData">
+        <th scope="row">1</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>
+          <button
+            type="button"
+            *ngIf="!item.isProductAdded"
+            class="btn btn-success"
+            (click)="addedToCart(item.id, item)"
+          >
+            Added to cart
+          </button>
+          <span *ngIf="item.isProductAdded" class="label label-success"
+            >Product already added to cart</span
+          >
+        </td>
+      </tr>
+      <tr *ngIf="productData.length === 0">
+        <td colspan="5">No records found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <ngb-pagination
+      [collectionSize]="productData.length"
+      [(page)]="page"
+      [maxSize]="5"
+      [rotate]="true"
+      [ellipses]="false"
+      [boundaryLinks]="true"
+    ></ngb-pagination> -->
+</div>
+<app-loader *ngIf="isLoading"></app-loader>

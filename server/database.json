@@ -1,0 +1,57 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Rustic Fresh Pizza",
+      "description": "Natus consequatur atque laborum expedita quaerat distinctio quis. Asperiores nesciunt mollitia omnis. Suscipit quibusdam rem alias eligendi ipsa consequuntur. Et tempora velit alias nostrum blanditiis natus dignissimos tempore. Quo quam itaque velit mollitia ut.",
+      "price": "275.00",
+      "quantity": 14780,
+      "isProductAdded": true
+    },
+    {
+      "id": 2,
+      "name": "Sleek Fresh Bike",
+      "description": "Et aut libero sit sint consequatur autem. Dolores et hic quasi veniam sit qui repellat mollitia. Illum eius et architecto quis voluptatibus nihil beatae explicabo debitis. Qui id repellat iure voluptatum qui fugit tenetur animi.",
+      "price": "339.00",
+      "quantity": 77182,
+      "isProductAdded": false
+    },
+    {
+      "id": 3,
+      "name": "Tasty Metal Hat",
+      "description": "Quaerat et qui impedit earum odio quia aut. Qui velit dolorem quis qui sunt commodi consequuntur. Iste harum eaque est labore sed sunt. Nostrum deserunt quam illum voluptatem illo minima. Nesciunt voluptatibus cumque eveniet consequatur.",
+      "price": "504.00",
+      "quantity": 63751,
+      "isProductAdded": false
+    },
+    {
+      "name": "Demo1",
+      "description": "Demo1",
+      "price": "21",
+      "quantity": "2",
+      "image": "https://source.unsplash.com/1600x900/?product",
+      "id": 4
+    },
+    {
+      "name": "Pizza",
+      "description": "",
+      "price": "21",
+      "quantity": "2",
+      "id": 5
+    },
+    {
+      "name": "Test",
+      "description": "",
+      "price": "1",
+      "quantity": "1",
+      "id": 6
+    },
+    {
+      "name": "demo",
+      "description": "knfvk`nk",
+      "price": "21",
+      "quantity": "22",
+      "id": 7
+    }
+  ]
+}

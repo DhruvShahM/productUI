@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-3">
+    <a class="btn btn-primary mb-4" routerLink="/list-product" routerLinkActive
+      >Go to list Product</a
+    >
+  </div>
+  <div class="form-group has-search col-md-7">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search Product name"
+      (input)="getProductData($event.target.value)"
+    />
+  </div>
+</div>
+<h2>Cart List</h2>
+
+<div class="table-responsive-md">
+  <table class="table">
+    <caption>
+      List of Products Added in the cart
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!isLoading">
+      <tr *ngFor="let item of cartData; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removedToCart(item.id, item)"
+          >
+            Removed from the cart
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="cartData.length === 0 && !isLoading">
+        <td colspan="5">No records found.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <ngb-pagination
+      [collectionSize]="productData.length"
+      [(page)]="page"
+      [maxSize]="5"
+      [rotate]="true"
+      [ellipses]="false"
+      [boundaryLinks]="true"
+    ></ngb-pagination> -->
+</div>
+<app-loader *ngIf="isLoading"></app-loader>
